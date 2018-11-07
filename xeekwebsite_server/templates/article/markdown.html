@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% block header %}
+<h1>{% block title %}index{% endblock %}</h1>
+{% endblock %}
+
+{% block script %}
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/showdown/1.8.6/showdown.min.js"></script>
+{% endblock %}
+
+{% block style %}
+<link href="https://cdn.bootcss.com/highlight.js/9.12.0/styles/monokai-sublime.min.css" rel="stylesheet">
+<!-- <link href="https://cdn.bootcss.com/highlight.js/9.12.0/styles/default.min.css" rel="stylesheet"> -->
+{% endblock %}
+
+{% block content_header %}
+<script>
+    hljs.initHighlightingOnLoad();</script>
+<div class="article-cover">
+    <div class="article-header" style="background-image: url('https://image.gcores.com/508c648f-af92-42e6-8be7-fdea689c1436.jpg?x-oss-process=style/original_hl')">
+        <div class="article-header-cover"></div>
+        <div class="article-header-imgContainer">
+            <div class="article-header-imgContainer-img">
+                <img data-no-retina="" alt="这就是战地！DICE放出《战地V》全新宣传片" src="https://image.gcores.com/508c648f-af92-42e6-8be7-fdea689c1436.jpg?x-oss-process=style/original_hl">
+            </div>
+        </div>
+    </div>
+</div>
+<a class="article-user" href="/users/76562">
+    <div class="article-user-border">
+        <img src="https://alioss.gcores.com/uploads/user/0e51fe48-a31b-4bd1-896f-4a1397bb99fb_normalat2x.jpg" alt="">
+    </div>
+    <p class="article-user-name">
+        xeekseven
+    </p>
+</a>
+{% endblock%}
+
+{% block content_body %}
+
+<div class="flex-cloumn flex-align-start flex-warp wsite-content-body-article">
+    <div>
+        <textarea id="article-writeinput" class="article-create-writeinput" style="display:none"></textarea>
+    </div>
+    <div style="padding:0 0.1rem;text-align:center">
+        <h2 class="_25Ia0">{{markdown.title}}</h2>
+    </div>
+    <div id="result" class="article-create-markdown"></div>
+
+    <div class="article-content-footer">
+        <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+        <strong>1231</strong>
+        <span class="glyphicon glyphicon-qrcode" aria-hidden="true"></span>
+        <strong>4</strong>
+    </div>
+</div>
+{% endblock %}
+
+{% block content_footer %}
+<script>
+    $('.article-create-writeinput').html('{{markdown.content}}');
+    var text = document.getElementById("article-writeinput").value;
+    //var text = '{{markdown.content}}';
+    var converter = new showdown.Converter();
+    var html = converter.makeHtml(text);
+    document.getElementById("result").innerHTML = html;
+    $('pre code').each(function (i, block) {
+        hljs.highlightBlock(block);
+    });
+</script>
+{% endblock %}

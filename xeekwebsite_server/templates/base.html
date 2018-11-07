@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html style="font-size:100px">
+<title>{% block title %}{% endblock %} - Flaskr</title>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit">
+    <!-- for 360 指定内核 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>
+        xeekwebsite
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+    {% block script %}
+    {% endblock %}
+    <meta name="keywords" content="游戏,游戏电台,游戏广播,游戏播客,电视游戏,家用机游戏,单机游戏,游戏论坛,游戏新闻,游戏视频.">
+
+    <meta name="description" content="从游戏到生活，我们生产内容，关乎你喜爱的一切。">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/css/flexcss.css" />
+    <link rel="stylesheet" href="/static/css/component.css" />
+    <link rel="stylesheet" href="/static/css/test.css" />
+    <link rel="stylesheet" href="/static/css/wsite.css" />
+    {% block style %}
+    {% endblock %}
+</head>
+
+<body style="margin:0px;background-color:#fff;overflow-x: hidden;">
+    <div class="main-site flex-column flex-main-start" style="width:100%">
+        <div class="wsite-header flex-row flex-main-start">
+            <a href="#" class="flex-column flex-main-center header-log">
+                <img src="static/img/xeeksite.png" style="max-height:28px" />
+            </a>
+            <div class="flex-row flex-main-start header-menu">
+                <div class="flex-column flex-main-center header-menu-detail">语言</div>
+                <div class="flex-column flex-main-center header-menu-detail">数据</div>
+                <div class="flex-column flex-main-center header-menu-detail">爬虫</div>
+                <div class="flex-column flex-main-center header-menu-detail">绘图</div>
+                <div class="flex-column flex-main-center header-menu-detail" style="border-right: 1px solid #f0f0f0;">杂谈</div>
+            </div>
+            <div class="flex-column flex-main-center header-search" style="border-right: 1px solid #f0f0f0;">
+                <div class="flex-row flex-main-start flex-align-center">
+
+                    <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+
+                    <input type="text" class="search-input" placeholder="whar's it want?" aria-describedby="basic-addon2">
+                </div>
+            </div>
+            <div class="flex-column flex-main-center">
+                {% if g.user %}
+                <a style="padding-left:0.5rem;">{{g.user["username"]}}</a>
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="flex-column flex-main-start wsite-content">
+            <div class="flex-column flex-main-start wsite-content-header">
+                {% block content_header %}{% endblock %}
+            </div>
+            <div class="wsite-content-body">
+                {% block content_body %}{% endblock %}
+            </div>
+            <div class="wsite-content-footer">
+                {% block content_footer %}{% endblock %}
+            </div>
+        </div>
+        <div class="flex-column flex-main-center wsite-footer">
+            <div class="footer_contact">
+                <a href="mailto:haolun@g-cores.com" target="_blank">CONTACT US | 联系我们</a>
+            </div>
+            <div class="flex-column flex-main-start flex-align-center footer_info">
+                <img class="footer_top" data-no-retina="" src="static/img/footer_logo.jpg"
+                    alt="">
+
+                <div class="footer_logos">
+                    <a href="https://www.g-cores.com/categories/13"><img data-no-retina="" src="https://alioss.g-cores.com/assets/footer/gadio-01-e8679bfc838ae676eead7fa354c6ab7e26f3ec7bbf093c58ccaa647ae7701de4.png"
+                            alt=""></a>
+                    <a href="https://www.g-cores.com/categories/12"><img data-no-retina="" src="https://alioss.g-cores.com/assets/footer/gadiopro-01-3bbe85deb999275b31c7658a0e09299751850497bbee7e10cedb6a83ab29de75.png"
+                            alt=""></a>
+                    <a href="https://www.g-cores.com/categories/14"><img data-no-retina="" src="https://alioss.g-cores.com/assets/footer/music-01-a744efa6c6fbba4474e9f2a4b4de64347065eddc7e9ebccc375a7de2e9829f74.png"
+                            alt=""></a>
+                    <a href="https://www.g-cores.com/categories/15"><img data-no-retina="" src="https://alioss.g-cores.com/assets/footer/docu-01-8640c29ee16770157814443d1dbd01ccd5b3cf007b249db6fc6523b295662d2a.png"
+                            alt=""></a>
+                    <a href="https://www.g-cores.com/categories/16"><img data-no-retina="" src="https://alioss.g-cores.com/assets/footer/special-01-69dcd46be43114fa958e1d969bc14297e12b193dd753fb924e07e0beff25dd37.png"
+                            alt=""></a>
+                </div>
+
+                <div class="footer_follow">
+                    <h4>Follow us</h4>
+                    <p>
+                        <a href="http://weibo.com/gamecore" target="_blank" class="footer_weibo"></a>
+                        <a href="javascript:;" class="footer_weixin" data-toggle="tooltip" data-placement="top" title=""
+                            data-original-title="微信号：gamecores，欢迎订阅"></a>
+                        <a href="http://shop124260606.taobao.com" target="_blank" class="footer_taobao"></a>
+                        <a href="http://itunes.apple.com/cn/podcast/id420660752" target="_blank" class="footer_podcast"></a>
+                        <a href="https://www.g-cores.com/rss" target="_blank" class="footer_rss"></a>
+                    </p>
+                </div>
+
+                <p>
+                    All Rights Reserved 2009-2015 GAMECORES - Terms &amp; Conditions 闽ICP备11023385号-1
+                </p>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+</html>

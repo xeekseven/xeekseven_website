@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html style="font-size:100px">
+<title>{% block title %}{% endblock %} - Flaskr</title>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit">
+    <!-- for 360 指定内核 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>
+        xeekwebsite
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+    {% block script %}
+    {% endblock %}
+    <meta name="keywords" content="游戏,游戏电台,游戏广播,游戏播客,电视游戏,家用机游戏,单机游戏,游戏论坛,游戏新闻,游戏视频.">
+
+    <meta name="description" content="从游戏到生活，我们生产内容，关乎你喜爱的一切。">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/css/flexcss.css" />
+    <link rel="stylesheet" href="/static/css/component.css" />
+    <link rel="stylesheet" href="/static/css/test.css" />
+    <link rel="stylesheet" href="/static/css/wsite.css" />
+    {% block style %}
+    {% endblock %}
+</head>
+
+<body style="margin:0px;background-color:#fff;overflow-x: hidden;">
+    <div class="main-site flex-column flex-main-start" style="width:100%">
+
+
+        <div class="flex-column flex-main-start wsite-content">
+            <div class="flex-column flex-main-start wsite-content-header">
+                {% block content_header %}{% endblock %}
+            </div>
+            <div class="wsite-content-body">
+                {% block content_body %}{% endblock %}
+            </div>
+            <div class="wsite-content-footer">
+                {% block content_footer %}{% endblock %}
+            </div>
+        </div>
+       
+    </div>
+
+</body>
+
+</html>
+
+</html>

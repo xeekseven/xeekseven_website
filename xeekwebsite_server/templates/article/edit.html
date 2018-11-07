@@ -1,0 +1,127 @@
+{% extends 'nohead_nofooter_base.html' %}
+{% block header %}
+<h1>{% block title %}文档编辑{% endblock %}</h1>
+{% endblock %}
+
+{% block script %}
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/showdown/1.8.6/showdown.min.js"></script>
+{% endblock %}
+
+{% block style %}
+<link href="https://cdn.bootcss.com/highlight.js/9.12.0/styles/monokai-sublime.min.css" rel="stylesheet">
+<!-- <link href="https://cdn.bootcss.com/highlight.js/9.12.0/styles/default.min.css" rel="stylesheet"> -->
+<style>
+    .wsite-content{
+        margin-top: 0px;
+    }
+</style>
+{% endblock %}
+
+{% block content_header %}
+<script>hljs.initHighlightingOnLoad();</script>
+{% endblock %}
+
+{% block content_body %}
+<script type="text/javascript">
+
+    var IsLeft = true;
+    $(document).ready(function () {
+        $(".article-create-writeinput").scroll(function () {
+            if (!IsLeft) return;
+            let write_height = document.getElementById("article-writeinput").scrollHeight;
+            let read_height = document.getElementById("article-read").scrollHeight;
+            let ratio = read_height / write_height;
+            $(".article-create-read").scrollTop($(this).scrollTop() * ratio); // 纵向滚动条
+        });
+        $(".article-create-read").scroll(function () {
+            if (IsLeft) return;
+            let write_height = document.getElementById("article-writeinput").scrollHeight;
+            let read_height = document.getElementById("article-read").scrollHeight;
+            let ratio = write_height / read_height;
+            $(".article-create-writeinput").scrollTop($(this).scrollTop() * ratio); // 纵向滚动条
+
+
+        });
+        $("#publish-article").click(function () {
+            let markdown_id = '{% if article.markdown_id %}{{article.markdown_id}}{% endif %}';
+            $.ajax({
+                url: "/article/publish",
+                type: 'POST',
+                data: JSON.stringify({
+                    "markdown_id": markdown_id,
+                    "author_id": "1001AE",
+                    "title": $('.input-writetitle').val(),
+                    "content": $('#article-writeinput').val(),
+                    "tag": $("#input-markdown-tag").val()
+                }),
+                dataType: 'json',
+                contentType: 'application/json',
+                success: function (message) {
+                    alert("发布文章-成功状态 :" + message['status'].toString());
+                },
+                error: function (message) {
+                    alert("发布文章-错误状态 :" + message['status'].toString());
+                }
+            });
+        });
+    });
+    function WriteIn() {
+        IsLeft = true;
+    }
+    function ReadIn() {
+        IsLeft = false;
+    }
+    function convert() {
+        var text = document.getElementById("article-writeinput").value;
+        var converter = new showdown.Converter();
+        var html = converter.makeHtml(text);
+        document.getElementById("result").innerHTML = html;
+        document.getElementById("article-read-title").innerHTML = $('.input-writetitle').val();
+        $('pre code').each(function (i, block) {
+            hljs.highlightBlock(block);
+        });
+    }
+</script>
+<div class="flex-row flex-main-start">
+    <div class="flex-column flex-main-start article-create-write" onMouseOver="WriteIn()">
+        <div class="article-create-writetitle">
+            <input type="text" class="input-writetitle" value="{{article.title}}" onkeyup="convert()">
+        </div>
+        <div class="flex-row flex-main-end flex-align-center article-create-menu">
+            <div class="flex-row flex-main-center flex-align-center article-create-icon">
+                <span class="glyphicon glyphicon-tags" aria-hidden="true"></span>
+                <input id="input-markdown-tag" style="margin-right:0.15rem" type="text" placeholder="请填入tag" value="{{article.tag}}">
+            </div>
+            <div class="flex-column flex-main-center flex-align-center article-create-icon">
+                <span class="glyphicon glyphicon-floppy-save" aria-hidden="true"></span>
+            </div>
+            <div id="publish-article" class="flex-row flex-main-center flex-align-center article-create-icon">
+                <span class="glyphicon glyphicon-share" aria-hidden="true"></span>
+                <p style="margin:0.04rem 0.15rem 0 0;">发布文章</p>
+            </div>
+
+        </div>
+        <textarea id="article-writeinput" class="article-create-writeinput" onkeyup="convert()"></textarea>
+    </div>
+    <div id="article-read" class="flex-column flex-main-start article-create-read" onMouseOver="ReadIn()">
+        <div style="padding:0 0.1rem;text-align:center">
+            <h2 id="article-read-title"></h2>
+        </div>
+
+        <div id="result" class="article-create-markdown"></div>
+    </div>
+</div>
+<script type="text/javascript">
+    $('.article-create-writeinput').html('{{article.content}}');
+    convert();
+    var windows_hight = document.documentElement.clientHeight;//可见区域高度
+    var left_exist_height = $('.article-create-writetitle').height() + $('.article-create-menu').height()
+    console.log(left_exist_height);
+    $('.article-create-read').css('height', windows_hight);
+    $('.article-create-writeinput').css('min-height', windows_hight - left_exist_height);
+</script>
+{% endblock %}
+
+{% block content_footer %}
+{% endblock %}

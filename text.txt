@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% block header %}
+<h1>{% block title %}index{% endblock %}</h1>
+{% endblock %}
+
+{% block content_header %}
+<div class="article-cover">
+    <div class="article-header" style="background-image: url('https://image.g-cores.com/ffa57607-12f4-47b8-82b2-dc3b3216492f.jpg?x-oss-process=style/original_hsat2x')">
+        <div class="article-header-cover"></div>
+        <div class="article-header-imgContainer">
+            <div class="article-header-imgContainer-img">
+                <img data-no-retina="" alt="这就是战地！DICE放出《战地V》全新宣传片" src="https://image.g-cores.com/ffa57607-12f4-47b8-82b2-dc3b3216492f.jpg?x-oss-process=style/original_hsat2x">
+            </div>
+        </div>
+    </div>
+</div>
+<a class="article-user" href="/users/76562">
+    <div class="article-user-border">
+        <img src="https://alioss.g-cores.com/uploads/user/e336a4fc-e8b5-4c12-afe6-c04434d9f1e2_normalat2x.jpg" alt="">
+    </div>
+    <p class="article-user-name">
+        otaconl...
+    </p>
+</a>
+{% endblock%}
+
+{% block content_body %}
+<div class="flex-cloumn flex-align-start flex-warp wsite-content-body-article">
+    <div class="article-content-lead">
+        <p style="text-align:justify"><em>{{article_list['introduction']}}
+            </em></p>
+    </div>
+    {% for arcitem in article_list['content_list'] %}
+    {% if arcitem['name'] =='text' %}
+    <div class="article-content-text">
+        {% for txt in arcitem['value'] %}
+        <p>{{txt}}</p>
+        {% endfor %}
+    </div>
+    {% elif arcitem['name'] == 'image' %}
+    <div class="article-content-image">
+        <a target="_blank" href="https://alioss.g-cores.com/uploads/image/ad0667e9-fd75-41e4-bc07-15841f98569a_watermark.png">
+            <img class="j_storyshow_lazyload" data-original="https://alioss.g-cores.com/uploads/image/ad0667e9-fd75-41e4-bc07-15841f98569a_watermark.png"
+                src="{{arcitem['value']['src']}}" style="display: block;">
+            <p class="story_caption">
+                {{arcitem['value']['caption']}}
+            </p>
+        </a>
+    </div>
+
+    {% elif arcitem['name'] == 'video' %}
+    <div class="article-content-video">
+            <iframe width="640" height="360" src="{{arcitem['value']['video_src']}}"
+                frameborder="0" allowfullscreen=""></iframe>
+        </div>
+        <div class="article-content-text">
+            <p style="text-align:justify">秒拍视频地址：<a href="arcitem['value']['video_href']"
+                    target="_blank">点我</a></p>
+        </div>
+    {% endif %}
+    {% endfor %}
+</div>
+{% endblock %}
+
+{% block content_footer %}
+
+{% endblock %}
