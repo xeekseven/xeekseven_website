@@ -1,5 +1,6 @@
 import os
 import functools
+from xeekwebsite_server.LogFactory import LogInfo
 
 def execption_handle(view):
     @functools.wraps(view)
@@ -7,5 +8,5 @@ def execption_handle(view):
         try:
             return view(*args,**kargs)
         except Exception as e:
-            print('An exception happenning: %s' % str(e))
+            LogInfo().logInfo.info('An exception happenning: %s' % str(e))
     return ex_handle

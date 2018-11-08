@@ -5,8 +5,13 @@ from .view import home
 from .view import article
 from .view import auth
 
+from xeekwebsite_server import LogFactory
+
+import time
+
 def creat_app(config = None):
     app = Flask(__name__,instance_relative_config=True)
+    #logging.basicConfig(filename="./log/log.txt",format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
     app.config.from_mapping(
         SECRET_KEY='dev',
         DATABASE=os.path.join(app.instance_path, 'xeekweb.sqlite.db'),
@@ -29,6 +34,10 @@ def creat_app(config = None):
     app.register_blueprint(auth.bp)
     #app.add_url_rule('/index', endpoint='index2',view_func = index.index)
     app.register_blueprint(index.bp)
-    
+
+    LogFactory.LogInfo().logInfo = app.logger
+    LogFactory.LogInfo().init_log(app)
 
     return app
+
+

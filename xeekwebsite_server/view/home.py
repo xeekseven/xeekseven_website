@@ -10,6 +10,7 @@ from werkzeug.security import check_password_hash, generate_password_hash
 import datetime
 from xeekwebsite_server.util import execption_handle
 
+
 bp = Blueprint('home', __name__,url_prefix='/home')
 
 @bp.route('/index')
