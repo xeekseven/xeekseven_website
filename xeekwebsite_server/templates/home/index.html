@@ -122,6 +122,7 @@
             <div class="datetime">{{arcItem['modefiedtime']}}</div>
             <div class="flex-row flex-main-end">
                 {% if g.user %}
+                <a href="/article/delete/{{arcItem.id}}">删除&nbsp;</a>
                 <a href="/article/edit/{{arcItem.id}}">编辑&nbsp;</a>
                 {% endif %}
                 <a class="tag-info">{{arcItem['tag']}}</a>
@@ -147,6 +148,7 @@
     function GetArticle(id) {
         location.href = "/article/markdown/" + id;
     }
+    
 </script>
 {% endblock %} 
 {% block content_footer %} 

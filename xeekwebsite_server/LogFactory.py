@@ -3,18 +3,25 @@ from logging import Formatter, FileHandler
 from flask import Flask
 import time
 
-class Singleton(object):
-    _instance = None
-    def __new__(cls, *args, **kw):
-        if not cls._instance:
-            cls._instance = super(Singleton, cls).__new__(cls, *args, **kw)  
-        return cls._instance  
-class LogInfo(Singleton):  
-    logInfo = None
+def Singleton(cls):
+    _instance = {}
+
+    def _singleton(*args, **kargs):
+        if cls not in _instance:
+            _instance[cls] = cls(*args, **kargs)
+        return _instance[cls]
+    return _singleton
+
+@Singleton
+class LogInfo(object):  
+    logger = None
 
     def init_log(self,app):
-        log_file_name = 'logger-' + time.strftime('%Y-%m-%d', time.localtime(time.time())) + '.log'
-        file_handler = FileHandler(log_file_name)
+        self.logger = app.logger
+        log_file_name = './log/logger-' + time.strftime('%Y-%m-%d', time.localtime(time.time())) + '.log'
+        #输出到文件
+        file_handler = FileHandler(log_file_name,encoding='utf-8')
+        #输出到控制台
         handler = logging.StreamHandler()
         
         file_handler.setLevel(logging.INFO)
@@ -31,4 +38,4 @@ class LogInfo(Singleton):
         app.logger.addHandler(handler)
         app.logger.addHandler(file_handler)
         app.logger.info('初始化日志配置成功...')
-        
+    

@@ -8,5 +8,5 @@ def execption_handle(view):
         try:
             return view(*args,**kargs)
         except Exception as e:
-            LogInfo().logInfo.info('An exception happenning: %s' % str(e))
+            LogInfo().logger.error('An exception happenning: %s' % str(e))
     return ex_handle

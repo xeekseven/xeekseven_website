@@ -5,7 +5,7 @@ from .view import home
 from .view import article
 from .view import auth
 
-from xeekwebsite_server import LogFactory
+from xeekwebsite_server.LogFactory import LogInfo
 
 import time
 
@@ -34,9 +34,8 @@ def creat_app(config = None):
     app.register_blueprint(auth.bp)
     #app.add_url_rule('/index', endpoint='index2',view_func = index.index)
     app.register_blueprint(index.bp)
-
-    LogFactory.LogInfo().logInfo = app.logger
-    LogFactory.LogInfo().init_log(app)
+    
+    LogInfo().init_log(app)
 
     return app
 

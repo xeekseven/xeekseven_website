@@ -1,0 +1,99 @@
+2018-11-10 00:41:09,536 INFO: ≥ı ºªØ»’÷æ≈‰÷√≥…π¶... [in D:\python\xeekwebsite_flask\xeekwebsite_server\LogFactory.py:33]
+2018-11-10 01:03:33,120 INFO: ≥ı ºªØ»’÷æ≈‰÷√≥…π¶... [in D:\python\xeekwebsite_flask\xeekwebsite_server\LogFactory.py:33]
+2018-11-10 01:03:37,432 INFO: ≤È—Ømarkdown:SELECT * FROM article_markdown WHERE markdown_id = ? [in D:\python\xeekwebsite_flask\xeekwebsite_server\view\article.py:43]
+2018-11-10 16:21:26,478 INFO: ≥ı ºªØ»’÷æ≈‰÷√≥…π¶... [in D:\python\xeekwebsite_flask\xeekwebsite_server\LogFactory.py:38]
+2018-11-10 17:48:41,603 INFO: / ªÒ»°µΩÀ˘”– ˝æ› [in D:\python\xeekwebsite_flask\xeekwebsite_server\view\home.py:22]
+2018-11-10 17:59:18,716 INFO: ≥ı ºªØ»’÷æ≈‰÷√≥…π¶... [in D:\python\xeekwebsite_flask\xeekwebsite_server\LogFactory.py:38]
+2018-11-10 17:59:20,988 INFO: / ªÒ»°µΩÀ˘”– ˝æ› [in D:\python\xeekwebsite_flask\xeekwebsite_server\view\home.py:22]
+2018-11-10 17:59:50,334 ERROR: An exception happenning: Incorrect number of bindings supplied. The current statement uses 0, and there are 1 supplied. [in D:\python\xeekwebsite_flask\xeekwebsite_server\util.py:11]
+2018-11-10 17:59:50,335 ERROR: Exception on /home/search/a [GET] [in C:\Users\xeekseven\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "C:\Users\xeekseven\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\xeekseven\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1816, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "C:\Users\xeekseven\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1831, in finalize_request
+    response = self.make_response(rv)
+  File "C:\Users\xeekseven\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1957, in make_response
+    'The view function did not return a valid response. The'
+TypeError: The view function did not return a valid response. The function either returned None or ended without a return statement.
+2018-11-10 18:00:25,992 ERROR: An exception happenning: Incorrect number of bindings supplied. The current statement uses 0, and there are 1 supplied. [in D:\python\xeekwebsite_flask\xeekwebsite_server\util.py:11]
+2018-11-10 18:00:26,008 ERROR: Exception on /home/search/a [GET] [in C:\Users\xeekseven\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "C:\Users\xeekseven\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\xeekseven\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1816, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "C:\Users\xeekseven\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1831, in finalize_request
+    response = self.make_response(rv)
+  File "C:\Users\xeekseven\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1957, in make_response
+    'The view function did not return a valid response. The'
+TypeError: The view function did not return a valid response. The function either returned None or ended without a return statement.
+2018-11-10 18:01:46,569 INFO: ≥ı ºªØ»’÷æ≈‰÷√≥…π¶... [in D:\python\xeekwebsite_flask\xeekwebsite_server\LogFactory.py:38]
+2018-11-10 18:01:48,979 ERROR: An exception happenning: Incorrect number of bindings supplied. The current statement uses 0, and there are 1 supplied. [in D:\python\xeekwebsite_flask\xeekwebsite_server\util.py:11]
+2018-11-10 18:01:48,980 ERROR: Exception on /home/search/a [GET] [in C:\Users\xeekseven\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "C:\Users\xeekseven\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\xeekseven\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1816, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "C:\Users\xeekseven\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1831, in finalize_request
+    response = self.make_response(rv)
+  File "C:\Users\xeekseven\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1957, in make_response
+    'The view function did not return a valid response. The'
+TypeError: The view function did not return a valid response. The function either returned None or ended without a return statement.
+2018-11-10 18:02:51,655 INFO: ≥ı ºªØ»’÷æ≈‰÷√≥…π¶... [in d:\python\xeekwebsite_flask\xeekwebsite_server\LogFactory.py:38]
+2018-11-10 18:03:41,986 ERROR: An exception happenning: Incorrect number of bindings supplied. The current statement uses 0, and there are 1 supplied. [in d:\python\xeekwebsite_flask\xeekwebsite_server\util.py:11]
+2018-11-10 18:03:42,007 ERROR: Exception on /home/search/a [GET] [in C:\Users\xeekseven\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "C:\Users\xeekseven\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\xeekseven\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1816, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "C:\Users\xeekseven\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1831, in finalize_request
+    response = self.make_response(rv)
+  File "C:\Users\xeekseven\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1957, in make_response
+    'The view function did not return a valid response. The'
+TypeError: The view function did not return a valid response. The function either returned None or ended without a return statement.
+2018-11-10 18:03:58,268 INFO: ≥ı ºªØ»’÷æ≈‰÷√≥…π¶... [in d:\python\xeekwebsite_flask\xeekwebsite_server\LogFactory.py:38]
+2018-11-10 18:10:23,136 ERROR: An exception happenning: Incorrect number of bindings supplied. The current statement uses 0, and there are 1 supplied. [in d:\python\xeekwebsite_flask\xeekwebsite_server\util.py:11]
+2018-11-10 18:10:23,154 ERROR: Exception on /home/search/a [GET] [in C:\Users\xeekseven\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "C:\Users\xeekseven\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\xeekseven\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1816, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "C:\Users\xeekseven\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1831, in finalize_request
+    response = self.make_response(rv)
+  File "C:\Users\xeekseven\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1957, in make_response
+    'The view function did not return a valid response. The'
+TypeError: The view function did not return a valid response. The function either returned None or ended without a return statement.
+2018-11-10 18:13:19,288 INFO: ≥ı ºªØ»’÷æ≈‰÷√≥…π¶... [in D:\python\xeekwebsite_flask\xeekwebsite_server\LogFactory.py:38]
+2018-11-10 18:13:46,517 INFO: ≥ı ºªØ»’÷æ≈‰÷√≥…π¶... [in d:\python\xeekwebsite_flask\xeekwebsite_server\LogFactory.py:38]
+2018-11-10 18:16:13,731 INFO: ≥ı ºªØ»’÷æ≈‰÷√≥…π¶... [in d:\python\xeekwebsite_flask\xeekwebsite_server\LogFactory.py:38]
+2018-11-10 18:16:26,197 INFO: / À—À˜µΩ ˝æ› [in d:\python\xeekwebsite_flask\xeekwebsite_server\view\home.py:100]
+2018-11-10 18:25:13,036 INFO: ≥ı ºªØ»’÷æ≈‰÷√≥…π¶... [in D:\python\xeekwebsite_flask\xeekwebsite_server\LogFactory.py:38]
+2018-11-10 18:25:16,881 INFO: / À—À˜µΩ ˝æ› [in D:\python\xeekwebsite_flask\xeekwebsite_server\view\home.py:100]
+2018-11-10 18:25:58,177 INFO: ≥ı ºªØ»’÷æ≈‰÷√≥…π¶... [in D:\python\xeekwebsite_flask\xeekwebsite_server\LogFactory.py:38]
+2018-11-10 18:26:00,273 INFO: / À—À˜µΩ ˝æ› [in D:\python\xeekwebsite_flask\xeekwebsite_server\view\home.py:101]
+2018-11-10 18:26:02,901 INFO: / À—À˜µΩ ˝æ› [in D:\python\xeekwebsite_flask\xeekwebsite_server\view\home.py:101]
+2018-11-10 18:26:11,534 INFO: ≥ı ºªØ»’÷æ≈‰÷√≥…π¶... [in D:\python\xeekwebsite_flask\xeekwebsite_server\LogFactory.py:38]
+2018-11-10 18:26:16,672 ERROR: An exception happenning: incomplete format [in D:\python\xeekwebsite_flask\xeekwebsite_server\util.py:11]
+2018-11-10 18:26:16,673 ERROR: Exception on /home/search/a [GET] [in C:\Users\xeekseven\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "C:\Users\xeekseven\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\xeekseven\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1816, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "C:\Users\xeekseven\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1831, in finalize_request
+    response = self.make_response(rv)
+  File "C:\Users\xeekseven\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1957, in make_response
+    'The view function did not return a valid response. The'
+TypeError: The view function did not return a valid response. The function either returned None or ended without a return statement.
+2018-11-10 18:27:16,429 INFO: ≥ı ºªØ»’÷æ≈‰÷√≥…π¶... [in D:\python\xeekwebsite_flask\xeekwebsite_server\LogFactory.py:38]
+2018-11-10 18:27:19,765 INFO: / À—À˜µΩ ˝æ› [in D:\python\xeekwebsite_flask\xeekwebsite_server\view\home.py:101]
+2018-11-10 18:27:31,556 INFO: / ªÒ»°µΩÀ˘”– ˝æ› [in D:\python\xeekwebsite_flask\xeekwebsite_server\view\home.py:22]
+2018-11-10 18:29:02,465 INFO: ≥ı ºªØ»’÷æ≈‰÷√≥…π¶... [in D:\python\xeekwebsite_flask\xeekwebsite_server\LogFactory.py:38]
+2018-11-10 18:29:15,805 INFO: / À—À˜µΩ ˝æ› [in D:\python\xeekwebsite_flask\xeekwebsite_server\view\home.py:101]
+2018-11-10 23:36:44,177 INFO: ÂàùÂßãÂåñÊó•ÂøóÈÖçÁΩÆÊàêÂäü... [in D:\python\xeekwebsite_flask\xeekwebsite_server\LogFactory.py:40]
+2018-11-10 23:36:45,951 INFO: / Ëé∑ÂèñÂà∞ÊâÄÊúâÊï∞ÊçÆ [in D:\python\xeekwebsite_flask\xeekwebsite_server\view\home.py:22]
