@@ -8,6 +8,7 @@ from werkzeug.security import check_password_hash, generate_password_hash
 from xeekwebsite_server.db import get_db
 import uuid
 from xeekwebsite_server.util import execption_handle
+from xeekwebsite_server.LogFactory import LogInfo
 
 bp = Blueprint('auth', __name__, url_prefix='/auth')
 
@@ -38,10 +39,11 @@ def register():
             db.execute('INSERT INTO author (author_id,author_name,headimg) VALUES (?, ?, ?)',
                 (author_id,'xer','#'))
             db.commit()
+            LogInfo().logger.info('/auth/register 注册用户:%s' % username)
             return redirect(url_for('auth.login'))
-
+        LogInfo().logger.error('/auth/register 发生了错误:%s' % str(error))
         flash(error)
-
+        
     return render_template('auth/register.html')
 
 @bp.route('/login', methods=('GET', 'POST'))
@@ -55,18 +57,19 @@ def login():
         user = db.execute(
             'SELECT * FROM user WHERE username = ?', (username,)
         ).fetchone()
-
+        
         if user is None:
             error = 'Incorrect username.(账号不正确)...'
         elif not check_password_hash(user['password'], password):
             error = 'Incorrect password.(密码不正确)...'
-
+        
         if error is None:
             session.clear()
             session['user_id'] = user['author_id']
             #,userinfo={ 'username':username,'author_id':author_id }
+            LogInfo().logger.info('/auth/register 用户登录:%s' % username)
             return redirect(url_for('home.index'))
-
+        LogInfo().logger.error('/auth/register 发生了错误:%s' % str(error))
         flash(error)
 
     return render_template('auth/login.html')

@@ -33,7 +33,7 @@
     <div class="main-site flex-column flex-main-start" style="width:100%">
         <div class="wsite-header flex-row flex-main-start">
             <a href="#" class="flex-column flex-main-center header-log">
-                <img src="static/img/xeeksite.png" style="max-height:28px" />
+                <img src="/static/img/xeeksite.png" style="max-height:28px" />
             </a>
             <div class="flex-row flex-main-start header-menu">
                 <div class="flex-column flex-main-center header-menu-detail">语言</div>
@@ -46,13 +46,13 @@
                 <div class="flex-row flex-main-start flex-align-center">
 
                     <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-
                     <input type="text" class="search-input" placeholder="whar's it want?" aria-describedby="basic-addon2">
                 </div>
             </div>
-            <div class="flex-column flex-main-center">
+            <div class="flex-row flex-main-center flex-align-center" style="width:1.8rem;">
                 {% if g.user %}
-                <a style="padding-left:0.5rem;">{{g.user["username"]}}</a>
+                <a>{{g.user["username"]}}</a>
+                <a style="padding-left:0.05rem" href="/auth/logout">注销</a>
                 {% endif %}
             </div>
         </div>
@@ -107,6 +107,16 @@
             </div>
         </div>
     </div>
+    <script>
+        $(document).ready(function () {
+            $('.search-input').keydown(function(event){
+                if(event.keyCode==13){
+                    let indistince_name = $('.search-input').val();
+                    window.location = '/home/search/'+indistince_name;
+                }
+            })
+        })
+    </script>
 
 </body>
 
