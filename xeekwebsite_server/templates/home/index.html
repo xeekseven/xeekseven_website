@@ -114,7 +114,7 @@
 {% endblock%}
 
 {% block content_body %}
-<div class="flex-row flex-align-start flex-warp wsite-content-body-container">
+<div class="flex-row flex-align-start flex-main-center flex-warp wsite-content-body-container">
     {% for arcItem in arcList %}
     <div class="flex-column flex-main-start component-contentcard" onclick="GetArticle('{{arcItem.id}}')">
         <!-- <a id="ua-id" href="{{ url_for('article.index', id=arcItem['id']) }}"><p>view</p></a> -->
@@ -128,7 +128,7 @@
                 <a class="tag-info">{{arcItem['tag']}}</a>
             </div>
         </div>
-        <div class="component-contentcard-img">
+        <div class="flex-row flex-main-center flex-align-center component-contentcard-img">
             <img src="{{arcItem['imgpath']}}">
         </div>
         <div class="flex-row flex-main-between bottom">
