@@ -1,9 +1,7 @@
 .having-border{
     border: 1px dashed #000000
 }
-.header-menu-detail{
-    width: 30%;
-}
+
 .header-log{
     height: 2rem;
     width: 3rem;
@@ -23,7 +21,8 @@
     padding: 0.15rem;
     width:20%;
     text-align: center;
-
+    cursor: pointer;
+    min-width: 0.6rem;
 }
 .header-search{
     width: 4rem;
@@ -34,8 +33,13 @@
     display: table;
     border-collapse: separate;
 }
-.carousel-inner > div > img{
-    
+.carousel-inner {
+    /* height: 3.5rem; */
+}
+.carousel-inner > .item{
+    background-size: cover;
+    height: 3.8rem;
+    background-position: center;
 }
 .topic-tag{
     border-bottom: 0.01rem solid #f0f0f0;
