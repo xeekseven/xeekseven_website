@@ -281,6 +281,19 @@
 .footer_taobao:hover{
     background-position: 0 -210px;
 }
+.footer_github{
+    width: 30px;
+    height: 30px;
+    margin: 0 10px;
+    display: inline-block;
+    background: url(/static/img/github.png) 0 0 no-repeat;
+    background-size: contain;
+}
+.footer_github:hover{
+    background: url(/static/img/github_white.png) 0 0 no-repeat;
+    background-size: contain;
+}
+
 .heading{
     position: relative;
     text-align: center;
