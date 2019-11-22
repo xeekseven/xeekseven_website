@@ -29,9 +29,14 @@ threads=2
 ```
 
 
-3. 运行:当然有很多种管理方式，我们可以使用最傻瓜的轻量后台运行方式
+3. 运行:
+(a) 当然有很多种管理方式，我们可以使用最傻瓜的轻量后台运行方式
 ```
 nohup uwsgi uwsgi.ini &
+```
+(b) uwsgi 后台启动
+```
+uwsgi -d --ini /usr/websites/xeekwebsite_flask/uwsgi.ini 
 ```
 4. 输入shell命令正常退出,不然异常退出还是很终止
 ```
