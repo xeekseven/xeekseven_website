@@ -90,7 +90,19 @@ pre code{
 .footer_contact > a{
     color: #aaaaaa;
 }
-.wsite-content-body-article{
-    margin: 0.1rem 23% 0 23%;
-    padding: 0 0.2rem;
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .wsite-content-body-article{
+        padding: 0 0.2rem;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .wsite-content-body-article{
+        margin: 0.1rem 23% 0 23%;
+        padding: 0 0.2rem;
+    }
 }
