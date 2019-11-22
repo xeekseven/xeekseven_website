@@ -1,8 +1,0 @@
-2019-11-18 22:41:16,691 INFO: 初始化日志配置成功... [in /Users/xeek/Documents/DownloadCodes/xeekwebsite_flask/xeekwebsite_server/LogFactory.py:40]
-2019-11-18 22:41:31,027 INFO: / 获取到所有数据 [in /Users/xeek/Documents/DownloadCodes/xeekwebsite_flask/xeekwebsite_server/view/home.py:22]
-2019-11-18 22:41:41,763 INFO: / 获取到所有数据 [in /Users/xeek/Documents/DownloadCodes/xeekwebsite_flask/xeekwebsite_server/view/home.py:22]
-2019-11-18 22:42:05,877 INFO: / 获取到所有数据 [in /Users/xeek/Documents/DownloadCodes/xeekwebsite_flask/xeekwebsite_server/view/home.py:22]
-2019-11-18 22:53:45,014 INFO: 初始化日志配置成功... [in /Users/xeek/Documents/DownloadCodes/xeekwebsite_flask/xeekwebsite_server/LogFactory.py:40]
-2019-11-18 22:53:48,037 INFO: / 获取到所有数据 [in /Users/xeek/Documents/DownloadCodes/xeekwebsite_flask/xeekwebsite_server/view/home.py:22]
-2019-11-18 22:55:34,015 INFO: 初始化日志配置成功... [in /Users/xeek/Documents/DownloadCodes/xeekwebsite_flask/xeekwebsite_server/LogFactory.py:40]
-2019-11-18 22:55:36,564 INFO: / 获取到所有数据 [in /Users/xeek/Documents/DownloadCodes/xeekwebsite_flask/xeekwebsite_server/view/home.py:22]
